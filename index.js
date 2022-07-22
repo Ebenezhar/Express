@@ -4,9 +4,9 @@ const cors = require('cors');
 app.use(express.json())
 app.use(cors({ orgin: 'http://localhost:3000' }))
 const mongodb = require('mongodb');
-const { request } = require('express');
 const mongoClient = mongodb.MongoClient;
-const URL = "mongodb+srv://admin:admin1234@cluster0.u9lsu.mongodb.net/test";
+const dotenv = require('dotenv').config();
+const URL = process.env.DB;
 
 let students = [];
 
@@ -73,4 +73,4 @@ app.delete('/student/:id', async function (req, res) {
     }
 
 })
-app.listen(3001)
+app.listen(process.env.PORT || 3001)
