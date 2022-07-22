@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 app.use(express.json())
-app.use(cors({ orgin: 'http://localhost:3000' }))
+app.use(cors({ orgin: '*' }))
 const mongodb = require('mongodb');
 const mongoClient = mongodb.MongoClient;
 const dotenv = require('dotenv').config();
