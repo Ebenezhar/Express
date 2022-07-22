@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 app.use(express.json())
-app.use(cors({ orgin: '*' }))
+app.use(cors({ orgin: 'https://fanciful-pegasus-3aa2eb.netlify.app/' }))
 const mongodb = require('mongodb');
 const mongoClient = mongodb.MongoClient;
 const dotenv = require('dotenv').config();
