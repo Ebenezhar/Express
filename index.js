@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-app.use(express.json())
+const { request } = require('express');
+app.use(express.json());
 app.use(cors({ orgin: 'https://fanciful-pegasus-3aa2eb.netlify.app/' }))
 const mongodb = require('mongodb');
 const mongoClient = mongodb.MongoClient;
@@ -9,6 +10,8 @@ const dotenv = require('dotenv').config();
 const URL = process.env.DB;
 
 let students = [];
+
+
 
 app.post('/student', async function (req, res) {
     try {
