@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const { request } = require('express');
 app.use(express.json());
-app.use(cors({ orgin: 'https://fanciful-pegasus-3aa2eb.netlify.app/' }))
+app.use(cors({ orgin: 'https://animated-gingersnap-40629f.netlify.app/' }))
 const mongodb = require('mongodb');
 const mongoClient = mongodb.MongoClient;
 const dotenv = require('dotenv').config();
@@ -52,6 +52,7 @@ app.get('/student/:id', async function (req, res) {
 
 app.put('/student/:id', async function (req, res) {
     try {
+        console.log(req.params.id);
         const connection=  await mongoClient.connect(URL);
         const db = connection.db('schoolManagement');
         delete req.body._id;
